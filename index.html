@@ -4,11 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversão</title>
-   <link rel="stylesheet" href="./style/stylebreno.css">
+   <link rel="stylesheet" href="./style/style.css">
 </head>
-
 <body>
     <form action="./pages/action.php" method="get">
+            <div style= " display: inline-block;  border: 2px solid black;" class="choice">
+            <p> <strong> Escolha para qual moeda você deseja converter: </strong> </p> <br>
+            <input type="radio" name="moeda" value="Euro"> Euro <br>
+            <input type="radio" name="moeda" value="Dollar"> Dollar <br>
+            <input type="radio" name="moeda" value="Dinarkuwaitiano"> Dinar kuwaitiano <br> <br>
+            
+            <p>Digite o valor desejado em reais sem pontos, virgulas OU CENTAVOS: </p>
+            <p> <strong>DIGITE SOMENTE NÚMEROS INTEIROS</strong> </p>            
+            <input style="width: 200px;" type="number" name="valor" placeholder="R$: (digite somente números)" step="2" > <br> <br>
+            
+            <input type="submit" value="Conversão"> 
+ </div>
+
+            
+         
+        
+    </form>   
+</body>
+</html>
+
 
 <!-- Criar um algoritmo em php que permita três tipos de conversão:
 - Conversão de Real para Dólar
@@ -34,20 +53,3 @@ Importante
      - criação da função que converte para euro
      - criação da função que converte para a moeda de sua escolha 
      - criação de uma função que consuma uma API para pegar o valor das moedas usadas na conversão -->
-
- <div style= " display: inline-block;  border: 2px solid black;" class="choice">
-            <p> <strong> Escolha para qual moeda você deseja converter: </strong> </p> <br>
-            <input type="radio" name="moeda" value="Euro"> EURO <br>
-            <input type="radio" name="moeda" value="Dollar"> DOLLAR <br>
-            <input type="radio" name="moeda" value="Pesos"> PESOS <br> <br>
-            <p>Digite o valor desejado em reais sem pontos ou virgulas: </p>
-            <input style="width: 200px;" type="text" name="valor" placeholder="R$: (digite somente números)" step="0.5" > <br> <br>
-            <input type="submit" value="Conversão"> 
- </div>
-
-            
-         
-        
-    </form>   
-</body>
-</html>
