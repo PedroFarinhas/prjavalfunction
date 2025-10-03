@@ -4,18 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversão</title>
-    <link rel="stylesheet" href="./style/style.css">
+   <link rel="stylesheet" href="./style/stylebreno.css">
 </head>
 
 <body>
     <form action="./pages/action.php" method="get">
- 
-        <p style="">Escolha para qual moeda você deseja converter:</p>
-        <input type="radio" value="Euro">
-        <input type="radio" value="Dollar">
-        <input type="radio" value="Pesos">
 
-        <input type="submit" value="Conversão">
+<!-- Criar um algoritmo em php que permita três tipos de conversão:
+- Conversão de Real para Dólar
+- Conversão de Real para Euro
+- Conversão de Real para qualquer moeda que vocês escolherem
+ 
+O usuário deverá informar o valor em real e escolher em qual moeda deseja ver a
+conversão. Importante realizar todas as validações e impedir que erros ocorram.
+ 
+Usar o conceito de function para validar as entradas, exibir as mensagens, e para
+realizar a conversão.
+ 
+DESAFIO EXTRA: Consumir uma API para atualizar o valor de cotação das moedas. 
+ 
+Importante
+- Entrega feita no GitHub
+- O repositório deverá ter os seguintes commits
+     - estruturação do html e estilização com css
+     - criação da página php sem functions mas funcional
+     - criação da função que valida entradas
+     - criação da função que exibe a mensagem
+     - criação da função que converte para dólar
+     - criação da função que converte para euro
+     - criação da função que converte para a moeda de sua escolha 
+     - criação de uma função que consuma uma API para pegar o valor das moedas usadas na conversão -->
+
+ <div style= " display: inline-block;  border: 2px solid black;" class="choice">
+            <p> <strong> Escolha para qual moeda você deseja converter: </strong> </p> <br>
+            <input type="radio" name="moeda" value="Euro"> EURO <br>
+            <input type="radio" name="moeda" value="Dollar"> DOLLAR <br>
+            <input type="radio" name="moeda" value="Pesos"> PESOS <br> <br>
+            <p>Digite o valor desejado em reais sem pontos ou virgulas: </p>
+            <input style="width: 200px;" type="text" name="valor" placeholder="R$: (digite somente números)" step="0.5" > <br> <br>
+            <input type="submit" value="Conversão"> 
+ </div>
+
+            
+         
+        
     </form>   
 </body>
 </html>
