@@ -10,13 +10,13 @@
     <form action="./pages/action.php" method="get">
             <div style= " display: inline-block;  border: 2px solid black;" class="choice">
             <p> <strong> Escolha para qual moeda você deseja converter: </strong> </p> <br>
-            <input type="radio" name="moeda" value="Euro"> Euro <br>
-            <input type="radio" name="moeda" value="Dollar"> Dollar <br>
-            <input type="radio" name="moeda" value="Dinarkuwaitiano"> Dinar kuwaitiano <br> <br>
+            <input type="radio" name="coin" value="Euro"> Euro <br>
+            <input type="radio" name="coin" value="Dollar"> Dollar <br>
+            <input type="radio" name="coin" value="Dinarkuwaitiano"> Dinar kuwaitiano <br> <br>
             
             <p>Digite o valor desejado em reais sem pontos, virgulas OU CENTAVOS: </p>
-            <p> <strong>DIGITE SOMENTE NÚMEROS INTEIROS</strong> </p>            
-            <input style="width: 200px;" type="number" name="valor" placeholder="R$: (digite somente números)" step="2" > <br> <br>
+            <p> <strong>DIGITE SOMENTE NÚMEROS INTEIROS PARES</strong> </p>            
+            <input style="width: 200px;" type="number" name="value" placeholder="R$: (digite somente números)" step="2" > <br> <br>
             
             <input type="submit" value="Conversão"> 
  </div>
@@ -32,15 +32,15 @@
 <!-- Criar um algoritmo em php que permita três tipos de conversão:
 - Conversão de Real para Dólar
 - Conversão de Real para Euro
-- Conversão de Real para qualquer moeda que vocês escolherem
+- Conversão de Real para qualquer coin que vocês escolherem
  
-O usuário deverá informar o valor em real e escolher em qual moeda deseja ver a
+O usuário deverá informar o value em real e escolher em qual coin deseja ver a
 conversão. Importante realizar todas as validações e impedir que erros ocorram.
  
 Usar o conceito de function para validar as entradas, exibir as mensagens, e para
 realizar a conversão.
  
-DESAFIO EXTRA: Consumir uma API para atualizar o valor de cotação das moedas. 
+DESAFIO EXTRA: Consumir uma API para atualizar o value de cotação das coins. 
  
 Importante
 - Entrega feita no GitHub
@@ -51,5 +51,5 @@ Importante
      - criação da função que exibe a mensagem
      - criação da função que converte para dólar
      - criação da função que converte para euro
-     - criação da função que converte para a moeda de sua escolha 
-     - criação de uma função que consuma uma API para pegar o valor das moedas usadas na conversão -->
+     - criação da função que converte para a coin de sua escolha 
+     - criação de uma função que consuma uma API para pegar o value das coins usadas na conversão -->

@@ -1,48 +1,78 @@
 <?php
-$value = $_GET["valor"];
+
+$value = $_GET["value"];
+$coin = $_GET["coin"];
 $conversao = 0;
 $euro = 0.16;
 $dollar = 0.19;
 $dinar = 0.057;
+$taxa = 0;
+$sigla = "";
+$mensagem = "";
 
-if (!isset($_GET['moeda']) || filter_var($value, FILTER_VALIDATE_INT) == false) {
-    $mensagem = "Selecione uma opção e digite os números corretamente";
+function validateIn($value, $coin){
+if (!isset($coin) || filter_var($value, FILTER_VALIDATE_INT) == false)  {
+      if( empty($value)||$value<=0)
+       return false;
 } else {
-    $moeda = $_GET['moeda'];
-    if ($moeda == "Euro") {
-        $conversao = ($value * $euro);
-        $sigla = " €: ";
-        $taxa = $euro;
-    }
-    if ($moeda == "Dollar") {
-        $conversao = $value * $dollar;
-        $sigla = " $: ";
-        $taxa = $dollar;
-    }
-    if ($moeda == "Dinarkuwaitiano") {
-        $conversao = $value * $dinar;
-        $moeda = "Dinar Kuwaitiano";
-        $sigla = " KWD: ";
-        $taxa = $dinar;
-    }
-    $value = number_format($_GET["valor"], 2, ",", ".");
-    $conversao = number_format($conversao, 2, ",", ".");
-    $mensagem = "Você selecionou " . $moeda . ", a taxa de conversão é de " . $taxa . ", o valor para conversão foi de R$: " . $value .  ".  Convertendo ficou " . $sigla . $conversao. ".";
-}
-?>
+    return true;
+}}
 
+function selection($taxa, $sigla, $coin){  
+    if ($coin == "Euro") {
+        $taxa = 0.16;
+        $sigla = " €: ";
+         return $taxa;$sigla;$coin;
+    } 
+    if ($coin == "Dollar") {
+        $taxa = 0.19;
+        $sigla = " $: ";
+         return $taxa;$sigla;$coin;
+    } 
+    if ($coin == "Dinarkuwaitiano") {
+        $taxa = 0.057;
+        $coin = "Dinar Kuwaitiano";
+        $sigla = " KWD: ";
+         return $taxa;$sigla;$coin;
+    } }
+
+function math($taxa, $value){ 
+    $conversao = $taxa*$value;
+    return $conversao;
+}
+
+function validateOut($conversao, $value){
+    $value = number_format($_GET["value"], 2, ",", ".");
+    $conversao = number_format($conversao, 2, ",", ".");
+   
+    }
+
+     $mensagem = "Você selecionou " . $coin . ", a taxa de conversão é de " . $taxa . ", o value para conversão foi de R$: " . $value .  ".  Convertendo ficou " . $sigla . $conversao. ".";
+
+    function sendMensage($mensagem){
+       
+         echo $mensagem;
+    }
+
+    if (validateIn($value, $coin)==true ){
+        $mensagem = sendMensage($mensagem);
+    }else{
+ { header("Location: ../index.html");}
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VALOR CONVERTIDO</title>
+    <title>value CONVERTIDO</title>
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
     <div style=" display: inline-block;  border: 2px solid black; margin: 10px; padding: 10px;">
         <p>
-            <?= "{$mensagem}"  ?>
+            <?= sendMensage($mensagem) ?>
         </p>
     </div>
 </body>
